@@ -1,0 +1,127 @@
+come preparare un progetto per l'esame passo passo. 
+
+
+
+esempio di BLOG (Post)
+
+
+
+---------------------------------------------
+
+BACKEND
+
+express: fww che da dei metodi sottoforma di oggetto che ci da in modo veloce di definire tutti i tool per gestire http request
+
+prisma : ORM una struttura sempre  in JS con proprietò e metodi per eseguire operazione per i DB
+
+
+FONTEND: REACT + TAILWIND + HTML
+
+
+
+
+---------------------------------------------------
+
+
+1: setup express : pnpm init (genera package.json (dipendenze sviluppo e software, RICORDARSI il main in "app.js" e type "commonjs") ),
+
+                   pnpm add express
+
+2: creazione .gitignore(file per ignorare file non necessari al versionamento) / .env (per app_port..) 
+
+
+
+3: setup express (creazione file app.js )
+
+import express from 'express'
+
+//setup
+
+const app = express() // popolerà app.js con tutte le funzionalità di express
+const port = process.env.app_port
+
+
+//setup middleware
+creare cartella per middleware
+
+// setup route
+
+
+               callback
+app.get('/', (req, res) => {
+res.send('Homepage')
+}) ;
+
+//listener del server (server start)
+
+app.listen(port, () => {
+    console.log(`server started on http://localhost:${port}`)
+}
+
+----------------------------------------------------------------
+
+//nel file package.json creare il watch:
+
+"watch": "node --watch --env-file=.env ./app.js"
+
+---------------------------------------------------------------------
+
+//avviamo il server (pnpm watch)
+
+pnpm watch
+
+
+---------------------------------------------------------------------------
+
+//definizione rotte per entità Post
+
+leggere aggiornare, eliminare e aggiungere CRUD, con le REST
+
+
+// creare cartella routes, e file entitàRouter.js
+
+
+const router = express.Router();
+
+//BASE path /posts 
+
+entra in app.js e importiamo il router (import entitàRouter) scrivi:
+
+import entitàRouter (import entitàRouter from './routes/entitàRouter.js')
+
+INDEX: lista di tutte le entità (READ)
+
+router.get('/posts' (req, res) => {
+    res-send('lista dei posts')
+
+})
+
+
+//SHOW - (read) - dettaglio di una entità specifica
+
+router.get('/:id', (req, res) => {
+    const id = Number(req.params.id)
+
+    res.send('dettaglio del post con id n. ${id}`)
+} )
+
+
+// STORE - creazione nuovo elemento (Create)
+
+//UPDATE - modifica di un elemento esistente (UPDATE)
+
+//DESTROY - eliminazione parziale o completa di una speicifica entitò
+
+export default router
+
+
+//inizializzazione prisma 
+- convertire prisma ts in js dal config.ts
+
+//definizione db nel file prisma/schema.prisma
+
+definizione tabella :
+
+model nomeTabel {
+    nome datatType 
+}
