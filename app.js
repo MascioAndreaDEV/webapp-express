@@ -5,6 +5,11 @@ import sportsWearRouter from './routes/sportsWearRoute.js'
 const app =  express();
 const port = process.env.APP_PORT;
 
+
+//middleware  di setup
+app.use(express.json())
+
+
 //setup HompageRoute
 app.get('/', (req, res) => {
     res.send('homepage del ecommerce')

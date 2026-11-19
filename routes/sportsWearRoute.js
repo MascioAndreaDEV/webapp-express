@@ -14,6 +14,19 @@ sportsWearRouter.get('/:id', (req, res) => {
 res.send(`collegato al prodotto con id ${id}`)
 });
 
+//CREATE
+
+sportsWearRouter.post('/', (req, res) => {
+    const body = req.body;
+
+    //verifica prodotto inserito
+    console.log(body);
+
+    res.send('aggiunta prodotto in sportswear')
+});
+
+
+
 
 
 
