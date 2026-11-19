@@ -3,7 +3,7 @@ import sportsWearRouter from './routes/sportsWearRoute.js'
 
 //setup express
 const app =  express();
-const port = process.env.APP_PORT;
+const port = process.env.APP_PORT || 3000;
 
 
 //middleware  di setup
