@@ -125,3 +125,24 @@ definizione tabella :
 model nomeTabel {
     nome datatType 
 }
+
+
+
+
+// TRACCIA Ciao classe
+esercizio di oggi: Web app Express
+nome repo: webapp-express
+
+Con i prossimi esercizi andremo a realizzare il nostro progetto fullstack con Express.js per la parte backend e React.js per la parte frontend.
+
+Per coloro che sono intenzionati a sostenere l'esame ed ottenere il certificato ed il career center, è bene tenere presente che in fase di esame vi verrà chiesto di fare una presentazione di questo progetto.
+
+Potete utilizzare gli stessi concetti visti insieme a lezione ma segliendo un tema vostro, come as esempio: Films, Videogames, Prodotti, ecc...
+
+Oggi andiamo a realizzare la parte di setup backend Express e Prisma:
+Installazione Express
+Definizione Router con le rotte CRUD (per ora ritornano solo testo) per la nostra entità scelta (products, movies, ecc)
+Installazione e configurazione di Prisma
+Definizione nello schema prisma di due modelli desiderati e in relazione tra loro, ad esempio Product e Category
+
+Buon lavoro! 
