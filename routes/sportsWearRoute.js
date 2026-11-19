@@ -25,7 +25,18 @@ sportsWearRouter.post('/', (req, res) => {
     res.send('aggiunta prodotto in sportswear')
 });
 
+//UPDATE
 
+sportsWearRouter.patch('/:id', (req, res) => {
+    const id = req.params.id
+res.send(`modifica del prodotto sportswear con id ${id}`)
+});
+
+//DESTROY
+sportsWearRouter.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    res.send(`eliminazione del prodotto sportswear con id ${id}`)
+})
 
 
 
