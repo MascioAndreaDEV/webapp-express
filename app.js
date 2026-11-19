@@ -1,5 +1,5 @@
 import express from 'express'
-
+import sportsWearRouter from './routes/sportsWearRoute.js'
 
 //setup express
 const app =  express();
@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
 });
 
 
+app.use('/sportswear', sportsWearRouter)
 
 
 //listen app.js
