@@ -15,11 +15,25 @@ datasource db {
 //MODELS
 
 model sportsWear {
-  id          Int      @id @default(autoincrement())
+  id          Int      @id @default(autoincrement()) //pk
+  categoryId  Int //fk
+  //relazione fra sportsWear e category
+  category    Category @relation(fields: [categoryId], references: [id])
   name        String   @unique
   description String   @db.Text
-  price       Int      @db.MediumInt
+  price       Decimal  @db.Decimal(10, 2)
   isPublic    Boolean  @default(false)
-  createdAt   DateTime @default(now())
+  createAt    DateTime @default(now())
   updateAt    DateTime @updatedAt
+}
+
+//relazione 1 a n sportsWear / Category
+
+model Category {
+  id       Int      @id @default(autoincrement()) //pk
+  name     String   @unique @db.VarChar(50)
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+  sportsWear sportsWear[]
 }
