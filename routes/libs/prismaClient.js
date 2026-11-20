@@ -6,6 +6,8 @@ import { PrismaMariaDb } from "@prisma/adapter-mariadb";
 // Configurazione adapter con .env file
 const adapter = new PrismaMariaDb(process.env.DATABASE_URL);
 
+
+
 //inizializza sessione 
 const prisma = new PrismaClient({
     adapter,

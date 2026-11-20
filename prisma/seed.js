@@ -1,8 +1,16 @@
-
+import { faker } from "@faker-js/faker";
 import prisma from "../routes/libs/prismaClient.js";
 
-function main() {
+async function main() {
 console.log('logica seeder');
+
+//creo uniquearray per nome categorie
+
+const categoriesNames = faker.helpers.uniqueArray(
+    faker.commerce.department, 5,
+)
+
+console.log(categoriesNames);
 
 }
 
