@@ -3,9 +3,9 @@ import express from 'express'
 const sportsWearRouter = express.Router()
 
 
-//creo pagina index prodotti
+// Rotta INDEX prodotti (READ)
 sportsWearRouter.get('/', (req, res) => {
-res.send('all sportswear avaible')
+    res.send('all sportswear available');
 });
 
 //SHOW

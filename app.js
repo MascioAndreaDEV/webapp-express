@@ -1,5 +1,7 @@
 import express from 'express'
 import sportsWearRouter from './routes/sportsWearRoute.js'
+import errorsHandler from './middleware/errorHandler.js';
+import notFound from './middleware/notFound.js';
 
 //setup express
 const app =  express();
@@ -18,6 +20,12 @@ app.get('/', (req, res) => {
 
 app.use('/sportswear', sportsWearRouter)
 
+
+// collego middlewate error handler (500)
+app.use(errorsHandler);
+
+// collego middleware per errore (400) not found
+app.use(notFound);
 
 //listen app.js
 app.listen(port, () => {
